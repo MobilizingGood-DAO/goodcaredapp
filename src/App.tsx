@@ -11,7 +11,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { GOOD_CARE_CHAIN } from './constants';
 import { AuthProvider } from './context/AuthContext';
 
-// Layout components
+// Layout
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
@@ -22,7 +22,10 @@ import LeaderboardPage from './pages/LeaderboardPage';
 import AboutPage from './pages/AboutPage';
 import AdminPage from './pages/AdminPage';
 
-// Create a client with custom config
+// Wallet Connect Button
+import ConnectWalletButton from './components/Connectwalletbutton';
+
+// Create a Query Client
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -48,9 +51,9 @@ function App() {
       supportedWallets={[
         embeddedWallet({
           auth: {
-            options: ['twitter', 'email', 'google'],
+            options: ['X"],
             redirectUrl: currentOrigin,
-            preferredAuth: 'email',
+            preferredAuth: 'X',
           },
         }),
         metamaskWallet(),
@@ -63,6 +66,12 @@ function App() {
           <Router>
             <div className="flex flex-col min-h-screen">
               <Header />
+
+              {/* ✨ Insert Connect Wallet Button (global, always visible) */}
+              <div className="container mx-auto mt-4">
+                <ConnectWalletButton />
+              </div>
+
               <main className="flex-grow">
                 <Routes>
                   <Route path="/" element={<HomePage />} />
@@ -72,6 +81,7 @@ function App() {
                   <Route path="/admin" element={<AdminPage />} />
                 </Routes>
               </main>
+
               <Footer />
             </div>
           </Router>
