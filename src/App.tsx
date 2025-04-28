@@ -51,7 +51,7 @@ function App() {
       supportedWallets={[
         embeddedWallet({
           auth: {
-            options: ['X"],
+            options: ["X"],
             redirectUrl: currentOrigin,
             preferredAuth: 'X',
           },
