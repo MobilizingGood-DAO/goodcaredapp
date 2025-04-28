@@ -1,16 +1,16 @@
 import { createThirdwebClient } from "thirdweb";
 import { ConnectButton } from "thirdweb/react";
-
 import { inAppWallet, createWallet } from "thirdweb/wallets";
 
+// 👇 replace "...." with your real Client ID
 const client = createThirdwebClient({
-  clientId: "....",
+  clientId: "YOUR_REAL_THIRDWEB_CLIENT_ID",
 });
 
 const wallets = [
   inAppWallet({
     auth: {
-      options: ["x"],
+      options: ["google", "apple", "email", "x"], // you can add "email" too if you want!
     },
   }),
   createWallet("io.metamask"),
@@ -20,7 +20,7 @@ const wallets = [
   createWallet("io.zerion.wallet"),
 ];
 
-function Example() {
+export default function ConnectWalletButton() {
   return (
     <ConnectButton
       client={client}
