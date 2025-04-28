@@ -10,7 +10,7 @@ const client = createThirdwebClient({
 const wallets = [
   inAppWallet({
     auth: {
-      options: ["google", "apple", "email", "x"], // you can add "email" too if you want!
+      options: ["x"], 
     },
   }),
   createWallet("io.metamask"),
