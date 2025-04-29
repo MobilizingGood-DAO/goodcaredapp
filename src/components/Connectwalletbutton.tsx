@@ -8,17 +8,16 @@ const client = createThirdwebClient({
 });
 
 const wallets = [
-  inAppWallet(
-    // built-in auth methods
-    {
-      auth: {
-        options: [
-          "google",
-          "x",
-        ],
-      },
+  inAppWallet({
+    auth: {
+      options: ["google", "x"],
     },
-    
+  }),
+  createWallet("io.metamask"),
+  createWallet("com.coinbase.wallet"),
+  createWallet("me.rainbow"),
+];
+
 export default function ConnectWalletButton() {
   return (
     <ConnectButton
