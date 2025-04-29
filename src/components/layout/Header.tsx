@@ -1,7 +1,7 @@
 import React from "react";
 import { HeartPulse } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ConnectWallet } from "@thirdweb-dev/react";
+import ConnectWalletButton from '..components/ConnectWalletButton';
 import { useAuth } from "../../context/AuthContext";
 
 const Header: React.FC = () => {
