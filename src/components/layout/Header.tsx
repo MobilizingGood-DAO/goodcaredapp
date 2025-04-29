@@ -1,7 +1,7 @@
 import React from "react";
 import { HeartPulse } from "lucide-react";
 import { Link } from "react-router-dom";
-import ConnectWalletButton from '..components/ConnectWalletButton';
+import ConnectWalletButton from '..components/Connectwalletbutton';
 import { useAuth } from "../../context/AuthContext";
 
 const Header: React.FC = () => {
@@ -63,4 +63,16 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default function Header() {
+  return (
+    <header className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
+      <div className="text-xl font-bold text-green-700">
+        GOOD CARE 🌱
+      </div>
+      <div>
+        <ConnectWalletButton />
+      </div>
+    </header>
+  );
+}
+
