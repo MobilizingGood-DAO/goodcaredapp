@@ -26,6 +26,7 @@ import AdminPage from './pages/AdminPage';
 import ConnectWalletButton from './components/Connectwalletbutton';
 
 import { inAppWallet } from "thirdweb/wallets";
+import { ConnectEmbed } from "thirdweb/react";
 
 // Create a Query Client
 const queryClient = new QueryClient({
